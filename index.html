@@ -4,8 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tailwind test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <script> 
+  tailwind.config = {
+    theme : {
+    extend : {
+      fontFamily:{
+        Poppins : ['Poppins']
+      },
+    },
+  },
+  };
+  </script>
 </head>
 <body>
-  
+  <nav class="bg-transparent text-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="#" class="text-lg font-bold">Test</a>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="hidden md:flex space-x-4 font-Poppins">
+          <a href="#home" class="hover:bg-slate-300 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          <a href="#about" class="hover:bg-slate-300 px-3 py-2 rounded-md text-sm font-medium">About</a>
+          <a href="#services" class="hover:bg-slate-300 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+          <a href="#contact" class="hover:bg-slate-300 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+        </div>
+
+        <!-- Hamburger Menu (Mobile) -->
+        <div class="md:hidden flex items-center">
+          <button id="menu-toggle" class="text-white focus:outline-none">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dropdown Menu (Mobile) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-blue-700 space-y-1 px-4 py-3">
+      <a href="#home" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-800">Home</a>
+      <a href="#about" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-800">About</a>
+      <a href="#services" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-800">Services</a>
+      <a href="#contact" class="block px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-800">Contact</a>
+    </div>
+  </nav>
+
+  <script>
+    // Toggle Mobile Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
