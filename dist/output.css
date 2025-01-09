@@ -889,6 +889,9 @@ body {
   background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
 }
 
+.hamburger-active{
+}
+
 .hover\:border-primary:hover {
   --tw-border-opacity: 1;
   border-color: rgb(115 0 255 / var(--tw-border-opacity, 1));
